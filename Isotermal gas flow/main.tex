@@ -1,0 +1,228 @@
+\documentclass[a4paper,12pt]{article}
+
+%%% Работа с русским языком
+\usepackage{cmap}					% поиск в PDF
+\usepackage{mathtext} 				% русские буквы в фомулах
+\usepackage[T2A]{fontenc}			% кодировка
+\usepackage[utf8]{inputenc}			% кодировка исходного текста
+\usepackage[english,russian]{babel}	% локализация и переносы
+
+%%% Дополнительная работа с математикой
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} % AMS
+\usepackage{icomma} % "Умная" запятая: $0,2$ --- число, $0, 2$ --- перечисление
+
+%% Номера формул
+%\mathtoolsset{showonlyrefs=true} % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
+%\usepackage{leqno} % Немуреация формул слева
+
+%% Свои команды
+\DeclareMathOperator{\sgn}{\mathop{sgn}}
+\newcommand*\Laplace{\mathop{}\!\mathbin\bigtriangleup}
+
+%% Перенос знаков в формулах (по Львовскому)
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}
+{\hbox{$\mathsurround=0pt #1$}}{}}
+
+%%% Работа с картинками
+\usepackage{graphicx}  % Для вставки рисунков
+\graphicspath{{pic/}{images2/}}  % папки с картинками
+\setlength\fboxsep{2pt} % Отступ рамки \fbox{} от рисунка
+\setlength\fboxrule{1pt} % Толщина линий рамки \fbox{}
+\usepackage{wrapfig} % Обтекание рисунков текстом
+
+
+
+
+%%% Работа с таблицами
+\usepackage{array,tabularx,tabulary,booktabs} % Дополнительная работа с таблицами
+\usepackage{longtable}  % Длинные таблицы
+\usepackage{multirow} % Слияние строк в таблице
+
+%%% Теоремы
+\theoremstyle{plain} % Это стиль по умолчанию, его можно не переопределять.
+\newtheorem{theorem}{Теорема}[section]
+\newtheorem{proposition}[theorem]{Утверждение}
+ 
+\theoremstyle{definition} % "Определение"
+\newtheorem{corollary}{Следствие}[theorem]
+\newtheorem{problem}{Задача}[section]
+ 
+\theoremstyle{remark} % "Примечание"
+\newtheorem*{nonum}{Решение}
+
+%%% Программирование
+\usepackage{etoolbox} % логические операторы
+
+%%% Страница
+\usepackage{extsizes} % Возможность сделать 14-й шрифт
+\usepackage{geometry} % Простой способ задавать поля
+	\geometry{top=12mm}
+	\geometry{bottom=12mm}
+	\geometry{left=5mm}
+	\geometry{right=5mm}
+%
+%\usepackage{fancyhdr} % Колонтитулы
+% 	\pagestyle{fancy}
+ 	%\renewcommand{\headrulewidth}{0pt}  % Толщина линейки, отчеркивающей верхний колонтитул
+% 	\lfoot{Нижний левый}
+% 	\rfoot{Нижний правый}
+% 	\rhead{Верхний правый}
+% 	\chead{Верхний в центре}
+% 	\lhead{Верхний левый}
+%	\cfoot{Нижний в центре} % По умолчанию здесь номер страницы
+
+\usepackage{setspace} % Интерлиньяж
+%\onehalfspacing % Интерлиньяж 1.5
+%\doublespacing % Интерлиньяж 2
+%\singlespacing % Интерлиньяж 1
+
+\usepackage{lastpage} % Узнать, сколько всего страниц в документе.
+
+\usepackage{soul} % Модификаторы начертания
+\usepackage{epigraph}
+\usepackage{hyperref}
+\usepackage[usenames,dvipsnames,svgnames,table,rgb]{xcolor}
+\hypersetup{				% Гиперссылки
+    unicode=true,           % русские буквы в раздела PDF
+    pdftitle={hw},   % Заголовок
+    pdfauthor={Шишкин Максим},      % Автор
+    pdfsubject={Эффект Холла в полуповоднике},      % Тема
+    pdfcreator={Создатель}, % Создатель
+    pdfproducer={Производитель}, % Производитель
+    pdfkeywords={hw}, % Ключевые слова
+    colorlinks=true,       	% false: ссылки в рамках; true: цветные ссылки
+    linkcolor=red,          % внутренние ссылки
+    citecolor=black,        % на библиографию
+    filecolor=magenta,      % на файлы
+    urlcolor=cyan           % на URL
+}
+
+\usepackage{csquotes} % Инструменты для ссылок
+\usepackage{cite} % Работа с библиографией
+%\usepackage[superscript]{cite} % Ссылки в верхних индексах
+%\usepackage[nocompress]{cite} % 
+
+\usepackage{float} %force establishe parametr to figure H,h,!
+
+\usepackage{multicol} % Несколько колонок
+
+\usepackage{ mathrsfs }
+
+\usepackage{physics}
+
+\usepackage{mathtools}
+
+\usepackage{empheq}
+\usepackage{floatflt}
+\usepackage[most]{tcolorbox}
+\usepackage{enumerate}
+
+%\usepackage{floatrow}
+
+
+\usepackage{tikz}
+\usetikzlibrary{fadings}
+\usetikzlibrary{shadows.blur}
+\usetikzlibrary{shapes}
+
+\usepackage{nicematrix}
+\NiceMatrixOptions{transparent,nullify-dots}
+
+\usepackage{pgfplots}
+\DeclareUnicodeCharacter{2212}{−}
+\usepgfplotslibrary{groupplots,dateplot}
+\usetikzlibrary{patterns,shapes.arrows}
+\pgfplotsset{compat=newest}
+
+\author{Максим Шишкин.}
+\title{HW 1.}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\problem{Найти давление при изотермическом протекании по цилиндру вязкого газа.}
+\nonum[Неправильное]{Некоторые рассуждения, приводящие к анзацу:
+\begin{itemize}
+    \item $p = \rho \frac{k_B T}{m}$ в силу уравнения Менделеева-Клайперона для газа.
+    \item будем искать решение, при котором скорость направлена только по оси цилиндра $\mathbf{u} = u_z(z, r) \mathbf{e_z}$.\footnote{Зная, что это не так, сложно приводить аргументы в пользу этого, но по-простому это можно мотивировать тем, что это сложно представить.}
+    \item Поскольку нет никого масштаба по z, при наличии закрепеленных границ(скорость на поверхности цилиндра 0), естественным кажется сохранения профиля, только с плавным перемасштабированием скорости по мере продвижения по цилиндру: $v_z = Z(z)R(r)$. (самоподобие течения в разных течениях)
+    \item из уравнения неразрывности $\partial_z(\rho v_z) \implies u_z = \frac{q(r)}{\rho}$, что указывает на разделение переменных для плотности и давления соответственно.
+\end{itemize}
+Таким образом, мы приходим к анзацу $p = \tilde{p}(z)\Psi(r)$, $u_z = \frac{q(r)}{\Psi(r)}\frac{1}{\tilde{p}(z)}\frac{k_B T}{m}$
+Выпишем стационарное уравнение Навье-Стокса для вязкой сжимающейся жидкости:
+\begin{equation}\label{eq:ns}
+    \rho(u_z\partial_z)u_z \mathbf{e_z} = - \nabla p + \eta \Laplace{ u_z} \mathbf{e_z} + \left(\zeta + \frac{\eta}{3}\right)\nabla (\partial_z u_z)
+\end{equation}
+\textit{Внезапный ход} - спроецируем на радиальную ось, подставив анзац выше:
+\begin{equation}
+    \tilde{p}(z)\partial_r\Psi(r) = \partial_r\left(\frac{q(r)}{\Psi(r)}\right)\partial_z\left(\frac{1}{\tilde{p}(z)}\right) \frac{k_B T}{m}\left(\zeta+\frac{\eta}{3}\right)
+\end{equation}
+Переменные тогда разделяются:
+\begin{equation}
+    \frac{1}{\tilde{p}(z)}\partial_z \left(\frac{1}{\tilde{p}(z)}\right) = \mathcal{C} = \frac{\partial_r \Psi(r)}{\partial_r(q/\Psi)} \frac{m}{k_B T}\frac{1}{\zeta + \frac{\eta}{3}}
+\end{equation}
+Отсюда находим, интегрируя:
+\begin{equation}
+    \tilde{p}(z) = \frac{1}{\sqrt{2\mathcal{C} z + c}}, \; \mathcal C \frac{q}{\Psi} = \frac{m}{k_B T}\frac{1}{\zeta+\eta/3}(\Psi + c_0)\implies u_z = \frac{1}{\mathcal{C}}\frac{1}{\zeta + \eta/3}(\Psi(r) +c_0)\sqrt{2z\mathcal{C}+c}
+\end{equation}
+Однако, теперь легко видеть, что в таком виде решение \textit{не подойдёт} для проекции \eqref{eq:ns} на ось $z$ - разные степени вхождения корня в слагаемых.
+}
+\newpage
+\nonum[Более разумное]
+Схема не сработала, так как предположение о нулевой радиальной скорости при ненулевом градиенте давления в радиальном направлении оказалось несовместимым с основым уравнением - уранвением на ось цилиндра. Или же утверждение о разделении переменных неверно.
+Теперь будем действовать в рамках теории возмущения, считая что сжимаемость вносит лишь небольшие поправки:\footnote{Идеалогически схема будет похожа на адиабатическое приближение, когда <<эволюция>> по $z$ малая, так что эволюция по $r$ подстраивается при данной окрестности $z$.}
+\begin{itemize}
+    \item $\mathbf{u} = u_z\mathbf{e_z} + u_r\mathbf{e_r}$
+    \item $u_r$ само по себе имеет некий порядок малости, причем её масштаб по $r\sim R$ так как в центре она ноль и на краях цилиндра, по $z$ она меняется слабо, поэтому дифферинцирование по $z$ вносит дополнительную малость.
+    \item $v_z$ величина не малая, но её масштаб по $z$ - большой, так что её производные по $z$ малы, по $r$ масштаб тот же - $R$.
+    \item градиет давления по $z$ не мал, однако следующие производные вносят малость, градиент же по $r$ мал.
+\end{itemize}
+Выпишем полное уравнение Навье-Стокса, указав, содержит каждый член малость порядка больше старшего в уравнении или нет.
+\begin{equation} z-\text{axis: }
+    \rho (u_z\textcolor{red}{\partial_z} + \textcolor{red}{u_r}\partial_r)u_z = -\partial_z p + \eta (\textcolor{red}{\Laplace_z} + \Laplace_r){u_z} + (\zeta + \eta/3)\textcolor{red}{\partial_z}(\partial_z u_z + u_r/r + \partial_r u_r)
+\end{equation}
+\begin{equation}\label{eq:r} r-\text{axis: }
+     \rho (u_z\textcolor{red}{\partial_z} + \textcolor{red}{u_r}\partial_r)u_r = -\partial_r p + \eta (\textcolor{red}{\Laplace_z} + \Laplace_r - \frac{1}{r^2})u_r + 
+     (\zeta + \eta/3)\partial_r(\underline{\partial_z u_z} + u_r/r + \partial_r u_r)
+\end{equation}
+Видно теперь, что, для оси $z$ получается в главном (не малом вовсе) уравнение как для несжимаемой жидкости:
+\begin{equation}
+    \partial_z p^{(-1)}\footnote{Индекс минус единица у давления подчеркивает, что само давленеи большое, а его производная порядка нулевого} = \eta \Laplace_r{} u_z^{(0)} \implies u_z^{0} = \frac{R^2-r^2}{4 \eta} (-\partial_z p^{(-1)})
+\end{equation}
+Кроме этого, мы имеет точный интеграл движения - поток через трубу постоянен во всех порядках теории возмущения, технически удобней весь поток удовлетворить в нулевом порядке, а в каждом следующей требовать равенства нулю потока в каждом следующем порядке теории возмущения.
+\begin{equation}
+    \int_S u_z^{(0)} \rho^{(0)} \dd{S} = q \pi R^2 \implies \rho^{(0)} (-\partial_z p^{(-1)}) R^2 = \textcolor{blue}{8}q\eta \implies \boxed{p^{(-1)} = \sqrt{\frac{\textcolor{blue}{16}q\eta}{R^2}\frac{k_B T}{m}}\sqrt{z_0-z}}
+\end{equation}
+\begin{equation}\boxed{
+    v_z^{(0)} = \frac{R^2-r^2}{4\eta} \sqrt{\frac{\textcolor{blue}{16}q\eta}{R^2}\frac{k_B T}{m}}\frac{1}{2\sqrt{z_0-z}} 
+}\end{equation}
+
+Теперь самое время понять, что является малым параметром, для этохо необходимо сранить оставленные и отброшенные части:
+\begin{eqnarray}
+    \eta \frac{1}{R^2} u_z^{(0)} \; \text{    V.S.   } \rho \partial_z (u_z^{(0)})^{2} \;   \text{    V.S.   } \eta \partial_z^2 u_z^{(0)} \\
+   \frac{\eta u_z}{R^2}  \; \text{    V.S.   } \frac{u_z \eta}{R^2}\, \frac{m u_z^2}{k_B T} \;   \text{    V.S.   } \frac{\eta u_z}{R^2} \left(\frac{\eta}{R\rho u_z}\right)^2 \left(\frac{m u_z^2 }{k_B T}\right)^2\\
+    1 \; \text{    V.S.   } \frac{m u_z^2}{k_B T} \;   \text{    V.S.   } \left(\frac{\eta}{R\rho u_z}\right)^2 \left(\frac{m u_z^2 }{k_B T}\right)^2
+\end{eqnarray}
+Таким образом, направленное движение должно быть малым возмущением над тепловым:
+\begin{equation}
+    \frac{k_B T}{m u^2} \gg \text{max}\left(1, \frac{1}{\text{Re}}\right)
+\end{equation}
+Альтернативная запись второго условия: $k_B T \gg f_{\eta} \bar{l}$, т.е. энергия, связанная с тепловым движением молекулы должна быть больше работы сил вязкого трения на величине расстояния между молекулами.
+Теперь, осозновая, что является малым параметром, мы можем сторить теорию возмущения дальше. 
+В частности, из уравнения неразрывности, оказывается, что $v_r^{(1)} = 0$. Отсюда $\partial_r p^{(0)} = 0$.
+Считая число рейнольдса не экстремальным, в первом порядке получаем уравнение:
+\begin{equation}
+    \partial_z p^{(0)}+ \rho^{(0)}u_z^{(0)}\partial_z u_z^{(0)} = \eta \Laplace_r u_z^{(1)}
+\end{equation}
+Содержательное задание - найти отклик именно на $u_z^{(0)}$
+\begin{equation}
+    \eta\Laplace_r u_z^{(1)} = - \sqrt{\frac{k_B T}{m}} \frac{1}{4(z_0-z)^{3/2}} \left(\frac{816q\eta}{R^2}\right)^{3/2} \left(\frac{R^2-r^2}{4\eta}\right)^2
+\end{equation}
+Ясно, что зависимость от $z$ останется той-же,что и у правой части, интегрирование же по $r$ производится явно. К этому нужно добавить решение, находящееся аналогично нулевому порядку $\sim \partial_z p^{(0)}$.
+После посчитать потоки от каждого, помня, что плотность $\rho = \rho^{0} + \rho^{1}(= \frac{m}{k_B T} p^{(0)})$.
+Равенство суммы потоков нулю зафиксирует $p^{(0)}$.
+В общем, это уже чисто техническая задача..
+Отметим лишь, что уже в следующем порядке у давления появится зависимость от радиуса, как и радиальная сокрость, что видно из наличия подчеркнутого члена в \eqref{eq:r}.
+\end{document}
